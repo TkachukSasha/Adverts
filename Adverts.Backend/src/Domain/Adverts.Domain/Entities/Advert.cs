@@ -17,7 +17,6 @@ namespace Adverts.Domain.Entities
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
         [Required]
-        [Range(0, 3)]
         public string PhotoUrl { get; set; }
     }
 }

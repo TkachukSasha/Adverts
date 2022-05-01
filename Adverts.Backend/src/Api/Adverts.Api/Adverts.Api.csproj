@@ -14,4 +14,8 @@
     <ProjectReference Include="..\..\Extensions\Adverts.Extensions\Adverts.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\DI\Extensions\" />
+  </ItemGroup>
+
 </Project>

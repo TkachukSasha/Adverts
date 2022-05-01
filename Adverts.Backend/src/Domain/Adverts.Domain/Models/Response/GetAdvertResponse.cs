@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Adverts.Domain.Models.Response
+﻿namespace Adverts.Domain.Models.Response
 {
     public class GetAdvertResponse
     {
