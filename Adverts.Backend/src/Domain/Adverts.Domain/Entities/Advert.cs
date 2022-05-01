@@ -13,6 +13,7 @@ namespace Adverts.Domain.Entities
         [Required]
         [MaxLength(1000)]
         public string AdvertDescription { get; set; }
+
         public decimal AdvertPrice { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
