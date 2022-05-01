@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dal\Adverts.Dal\Adverts.Dal.csproj" />
+    <ProjectReference Include="..\..\Domain\Adverts.Domain\Adverts.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

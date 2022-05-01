@@ -7,6 +7,6 @@ namespace Adverts.Domain.Models.Request
         public string AdvertName { get; set; }
         public string AdvertDescription { get; set; }
         public decimal AdvertPrice { get; set; }
-        public IEnumerable<string> PhotosUrl { get; set; }
+        public string PhotoUrl { get; set; }
     }
 }

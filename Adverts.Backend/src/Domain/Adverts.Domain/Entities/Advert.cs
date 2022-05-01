@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Adverts.Domain.Entities
@@ -19,6 +18,6 @@ namespace Adverts.Domain.Entities
 
         [Required]
         [Range(0, 3)]
-        public IEnumerable<string> PhotosUrl { get; set; }
+        public string PhotoUrl { get; set; }
     }
 }

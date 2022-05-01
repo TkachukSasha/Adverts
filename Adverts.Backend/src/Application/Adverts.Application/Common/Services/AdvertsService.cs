@@ -4,7 +4,9 @@ using Adverts.Domain.Entities;
 using Adverts.Domain.Models.Request;
 using Adverts.Domain.Models.Response;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,11 +23,11 @@ namespace Adverts.Application.Common.Services
             _mapper = mapper;
         }
 
-        public GetAdvertResponse GetAllAdverts()
+        public List<GetAdvertResponse> GetAllAdverts()
         {
             var listOfAdverts = _context.Adverts.ToList();
 
-            var mapper = _mapper.Map<GetAdvertResponse>(listOfAdverts);
+            var mapper = _mapper.Map<List<GetAdvertResponse>>(listOfAdverts);
 
             return mapper;
         }
@@ -49,9 +51,10 @@ namespace Adverts.Application.Common.Services
                 AdvertName = request.AdvertName,
                 AdvertDescription = request.AdvertDescription,
                 AdvertPrice = request.AdvertPrice,
-                PhotosUrl = request.PhotosUrl
+                PhotoUrl = request.PhotoUrl
             };
 
+            await _context.Adverts.AddAsync(advert);
             await _context.SaveChangesAsync();
 
             var mapper = _mapper.Map<CreateAdvertResponse>(advert);

@@ -1,3 +1,7 @@
+using Adverts.Application.Common.Contracts;
+using Adverts.Application.Common.Services;
+using Adverts.Dal.DI;
+using Adverts.Extensions.Common.Helpers.Mapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +30,9 @@ namespace Adverts.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<IAdvertsRepository, AdvertsService>();
+            services.AddPersistence(Configuration);
+            services.AddAutoMapper(typeof(AdvertsProfile));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
