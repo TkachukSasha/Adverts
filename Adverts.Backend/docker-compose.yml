@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  advertsdb:
+    image: postgres
+
+  cachedb:
+    image: redis:alpine
+
+  adverts.api:
+    image: ${DOCKER_REGISTRY-}advertsapi
+    build:
+      context: .
+      dockerfile: src/Api/Adverts.Api/Dockerfile
+
+volumes:
+  postgres_data:

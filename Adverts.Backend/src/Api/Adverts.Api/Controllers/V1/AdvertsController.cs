@@ -1,7 +1,7 @@
 ﻿using Adverts.Application.Common.Contracts;
 using Adverts.Domain.Models.Request;
 using Adverts.Domain.Models.Response;
-using Adverts.Extensions.Common.AttribureExtensions;
+using Adverts.Extensions.Common.AttributeExtensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

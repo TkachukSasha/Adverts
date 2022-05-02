@@ -17,17 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D78F5329-35DA-4A58-A1A7-0D09D7F44C69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adverts.Domain", "src\Domain\Adverts.Domain\Adverts.Domain.csproj", "{C163E435-712F-43A8-B865-EA51626C893F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adverts.Domain", "src\Domain\Adverts.Domain\Adverts.Domain.csproj", "{C163E435-712F-43A8-B865-EA51626C893F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adverts.Dal", "src\Dal\Adverts.Dal\Adverts.Dal.csproj", "{9A1CE7C2-B9C6-47C2-8F48-DDB2533C5926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adverts.Dal", "src\Dal\Adverts.Dal\Adverts.Dal.csproj", "{9A1CE7C2-B9C6-47C2-8F48-DDB2533C5926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adverts.Application", "src\Application\Adverts.Application\Adverts.Application.csproj", "{9A45C24B-693F-4E32-B459-391AFA0AFB5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adverts.Application", "src\Application\Adverts.Application\Adverts.Application.csproj", "{9A45C24B-693F-4E32-B459-391AFA0AFB5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adverts.Extensions", "src\Extensions\Adverts.Extensions\Adverts.Extensions.csproj", "{C84CA381-ABFA-4422-BC22-D49B6FB64547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adverts.Extensions", "src\Extensions\Adverts.Extensions\Adverts.Extensions.csproj", "{C84CA381-ABFA-4422-BC22-D49B6FB64547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adverts.Tests", "src\Tests\Adverts.Tests\Adverts.Tests.csproj", "{EB661BC6-C7C4-4AD4-9FF1-C6B5FD7C6104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adverts.Tests", "src\Tests\Adverts.Tests\Adverts.Tests.csproj", "{EB661BC6-C7C4-4AD4-9FF1-C6B5FD7C6104}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adverts.Api", "src\Api\Adverts.Api\Adverts.Api.csproj", "{0C578DC3-F05F-4235-8441-2D005B5DC5A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adverts.Api", "src\Api\Adverts.Api\Adverts.Api.csproj", "{0C578DC3-F05F-4235-8441-2D005B5DC5A2}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6CB279C7-C581-4B5D-BC07-6D31E30E5C60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{0C578DC3-F05F-4235-8441-2D005B5DC5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C578DC3-F05F-4235-8441-2D005B5DC5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C578DC3-F05F-4235-8441-2D005B5DC5A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB279C7-C581-4B5D-BC07-6D31E30E5C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB279C7-C581-4B5D-BC07-6D31E30E5C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB279C7-C581-4B5D-BC07-6D31E30E5C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB279C7-C581-4B5D-BC07-6D31E30E5C60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

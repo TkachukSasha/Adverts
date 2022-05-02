@@ -14,7 +14,7 @@ namespace Adverts.Dal.DI
 
             services.AddDbContext<AdvertsDbContext>(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseNpgsql(connectionString);
             });
 
             return services;
