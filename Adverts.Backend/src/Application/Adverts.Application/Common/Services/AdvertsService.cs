@@ -24,20 +24,37 @@ namespace Adverts.Application.Common.Services
 
         public List<GetAdvertResponse> GetAllAdverts()
         {
-            var listOfAdverts = _context.Adverts.ToList();
+            var listOfAdverts = _context.Adverts.OrderBy(x => x.CreationDate).ToList();
 
-            var mapper = _mapper.Map<List<GetAdvertResponse>>(listOfAdverts);
+            List<GetAdvertResponse> adverts = new List<GetAdvertResponse>();
 
-            return mapper;
+            foreach(var advert in listOfAdverts)
+            {
+                var words = advert.PhotoUrl;
+
+                if(words == null)
+                {
+                    var mapper = _mapper.Map<List<GetAdvertResponse>>(listOfAdverts);
+                }
+
+                string resultWord = words.Substring(0, words.IndexOf(','));
+
+                var response = new GetAdvertResponse { AdvertName = advert.AdvertName, AdvertPrice = advert.AdvertPrice, PhotoUrl = resultWord };
+
+                adverts.Add(response);
+            }
+
+            return adverts;
+
         }
 
         public GetAdvertResponse GetAdvertByName(string name)
         {
             var getAdvertByName = _context.Adverts.FirstOrDefault(a => a.AdvertName == name);
 
-            var mapper = _mapper.Map<GetAdvertResponse>(getAdvertByName);
+            var response = _mapper.Map<GetAdvertResponse>(getAdvertByName);
 
-            return mapper;
+            return response;
         }
 
         public async Task<CreateAdvertResponse> CreateAdvert(CreateAdvertRequest request)
@@ -56,9 +73,9 @@ namespace Adverts.Application.Common.Services
             await _context.Adverts.AddAsync(advert);
             await _context.SaveChangesAsync();
 
-            var mapper = _mapper.Map<CreateAdvertResponse>(advert);
+            var response = _mapper.Map<CreateAdvertResponse>(advert);
 
-            return mapper;
+            return response;
         }
     }
 }
