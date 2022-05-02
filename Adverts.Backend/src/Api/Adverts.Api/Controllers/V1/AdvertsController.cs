@@ -1,8 +1,8 @@
 ﻿using Adverts.Application.Common.Contracts;
 using Adverts.Domain.Models.Request;
 using Adverts.Domain.Models.Response;
+using Adverts.Extensions.Common.AttribureExtensions;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Adverts.Api.Controllers.V1
@@ -19,6 +19,7 @@ namespace Adverts.Api.Controllers.V1
         }
 
         [HttpGet("adverts")]
+        [Cached(600)]
         public IActionResult GetAllAdverts()
         {
             var result = _repository.GetAllAdverts();
