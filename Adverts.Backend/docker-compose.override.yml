@@ -1,18 +1,6 @@
 version: '3.4'
 
 services:
-  advertsdb:
-    container_name: advertsdb
-    environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin12344
-      - POSTGRES_DB=AdvertsDb
-    restart: always
-    ports:
-        - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-
   cachedb:
     container_name: cachedb
     restart: always    
@@ -22,10 +10,9 @@ services:
   adverts.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "DatabaseSettings:ConnectionString=Server=localhost;Port=5432;Database=AdvertsDb;User Id=admin;Password=admin12344;"
-      - "RedisCacheSettings:ConnectionString=cachedb:6379"
+      - "RedisCacheSettings:ConnectionString=localhost:6379"
     depends_on:
-      - advertsdb
       - cachedb
     ports:
       - "8000:80" 
+

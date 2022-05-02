@@ -1,9 +1,6 @@
 version: '3.4'
 
 services:
-  advertsdb:
-    image: postgres
-
   cachedb:
     image: redis:alpine
 
@@ -14,4 +11,4 @@ services:
       dockerfile: src/Api/Adverts.Api/Dockerfile
 
 volumes:
-  postgres_data:
+  pgadmin_data:

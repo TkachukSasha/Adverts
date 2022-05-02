@@ -1,4 +1,5 @@
 ﻿using Adverts.Application.Common.Contracts;
+using Adverts.Application.Common.Pagination.Filters;
 using Adverts.Dal.Data;
 using Adverts.Domain.Entities;
 using Adverts.Domain.Models.Request;
@@ -22,17 +23,17 @@ namespace Adverts.Application.Common.Services
             _mapper = mapper;
         }
 
-        public List<GetAdvertResponse> GetAllAdverts()
+        public List<GetAdvertResponse> GetAllAdverts(PaginationFilter pagination)
         {
-            var listOfAdverts = _context.Adverts.OrderBy(x => x.CreationDate).ToList();
+            var listOfAdverts = _context.Adverts.ToList();
 
             List<GetAdvertResponse> adverts = new List<GetAdvertResponse>();
 
-            foreach(var advert in listOfAdverts)
+            foreach (var advert in listOfAdverts)
             {
                 var words = advert.PhotoUrl;
 
-                if(words == null)
+                if (words == null)
                 {
                     var mapper = _mapper.Map<List<GetAdvertResponse>>(listOfAdverts);
                 }
@@ -44,8 +45,14 @@ namespace Adverts.Application.Common.Services
                 adverts.Add(response);
             }
 
-            return adverts;
+            if (pagination == null)
+            {
+                return adverts;
+            }
 
+            var skip = (pagination.PageNumber - 1) * pagination.PageSize;
+
+            return adverts.Skip(skip).Take(pagination.PageSize).ToList();
         }
 
         public GetAdvertResponse GetAdvertByName(string name)

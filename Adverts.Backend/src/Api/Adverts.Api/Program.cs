@@ -12,19 +12,19 @@ namespace Adverts.Api
         {
             var host = CreateHostBuilder(args).Build();
 
-            //using (var scope = host.Services.CreateScope())
-            //{
-            //    var serviceProvider = scope.ServiceProvider;
-            //    try
-            //    {
-            //        var context = serviceProvider.GetRequiredService<AdvertsDbContext>();
-            //        DataInitializer.Initialize(context);
-            //    }
-            //    catch (Exception exception)
-            //    {
-            //        throw new Exception(exception.Message);
-            //    }
-            //}
+            using (var scope = host.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                try
+                {
+                    var context = serviceProvider.GetRequiredService<AdvertsDbContext>();
+                    DataInitializer.Initialize(context);
+                }
+                catch (Exception exception)
+                {
+                    throw new Exception(exception.Message);
+                }
+            }
 
             host.Run();
         }
