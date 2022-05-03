@@ -9,6 +9,3 @@ services:
     build:
       context: .
       dockerfile: src/Api/Adverts.Api/Dockerfile
-
-volumes:
-  pgadmin_data:
